@@ -108,6 +108,13 @@ export default {
               >
             </div>
             <div class="group">
+              <select name="Genre" id="role" class="input">
+                <option value="Homme">Admin</option>
+                <option value="Femme">User</option>
+              </select>
+            </div>
+
+            <div class="group">
               <button class="button">Register</button>
             </div>
             <div class="hr"></div>

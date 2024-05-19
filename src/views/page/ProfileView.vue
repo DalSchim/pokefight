@@ -1,131 +1,135 @@
 <script>
 export default {
-  name: "ProfileView"
+  name: "ProfileView",
+
 }
 </script>
 
 <template>
-<section>
-  <div class="containeur">
-    <div class="profil">
-      <div class="profil-image">
-        <img src="@/assets/img/Pokeball-PNG-HD-Image.png" alt="">
-      </div>
-      <div class="boite-Badge">
-        <div><img src="" alt=""></div>
-        <div><img src="" alt=""></div>
-        <div><img src="" alt=""></div>
-        <div><img src="" alt=""></div>
-        <div><img src="" alt=""></div>
-        <div><img src="" alt=""></div>
-        <div><img src="" alt=""></div>
-        <div><img src="" alt=""></div>
+  <!--- Profile dresseur pokemon  une image de profil une boite pour les padge et les information du dresseur non prenon age et genre-->
+  <div class="profile">
+    <div class="profile__header">
+      <img src="@/assets/img/200px-Ludwig-NB.png" alt="profile" class="profile__header__image">
+      <div class="profile__header__info">
+        <h1 class="profile__header__info__name">Nom du dresseur</h1>
+        <div class="profile__header__info__badges">
+          <div class="profile__header__info__badges__badge">
+            <img src="https://via.placeholder.com/50" alt="badge" class="profile__header__info__badges__badge__image">
+          </div>
+          <div class="profile__header__info__badges__badge">
+            <img src="https://via.placeholder.com/50" alt="badge" class="profile__header__info__badges__badge__image">
+          </div>
+          <div class="profile__header__info__badges__badge">
+            <img src="https://via.placeholder.com/50" alt="badge" class="profile__header__info__badges__badge__image">
+          </div>
+        </div>
       </div>
     </div>
-    <div class="information-utilisateur">
-      <div class="info">
-        <span>nom: </span>
-        <span>email: </span>
-        <span>date de naissance: </span>
-        <span>nombre de pokemons: </span>
+    <div class="profile__content">
+      <div class="profile__content__info">
+        <div class="profile__content__info__item">
+          <h2 class="profile__content__info__item__title">Age</h2>
+          <p class="profile__content__info__item__value">20</p>
+        </div>
+        <div class="profile__content__info__item">
+          <h2 class="profile__content__info__item__title">Genre</h2>
+          <p class="profile__content__info__item__value">Homme</p>
+        </div>
       </div>
     </div>
   </div>
-  <!-- liste des pokemons du dresseur -->
+
+  <!--- Liste des pokemons du dresseur -->
+  <div class="pokemon-list">
+    <div class="pokemon-list__item">
+      <img src="https://via.placeholder.com/150" alt="pokemon" class="pokemon-list__item__image">
+      <h2 class="pokemon-list__item__name">Pikachu</h2>
+    </div>
+    <div class="pokemon-list__item">
+      <img src="https://via.placeholder.com/150" alt="pokemon" class="pokemon-list__item__image">
+      <h2 class="pokemon-list__item__name">Bulbizarre</h2>
+    </div>
+    <div class="pokemon-list__item">
+      <img src="https://via.placeholder.com/150" alt="pokemon" class="pokemon-list__item__image">
+      <h2 class="pokemon-list__item__name">Salamèche</h2>
+    </div>
+  </div>
 
 
-</section>
 </template>
-
 <style scoped lang="scss">
-.containeur{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 10px;
-  margin: 10px;
-  padding: 10px;
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #000;
   border-radius: 10px;
-  background: #f5f5f5;
+  margin: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  height: 80vh;
-
-  .profil{
+  background-color: #fff;
+  .profile__header {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    background: #f5f5f5;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    height: 100%;
-
-    .profil-image{
-      width: 400px;
-      height: 400px;
+    .profile__header__image {
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
-      img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
+      margin-right: 20px;
+      object-fit: cover;
+      object-position: top;
+      box-shadow:  0 0 10px rgba(0, 0, 0, 0.1);
     }
-
-    .boite-Badge{
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-gap: 10px;
-      margin-top: 10px;
-      background: #2c3e50;
-      height: 100%;
-      width: 100%;
-      padding: 10px;
-      border-radius: 10px;
-
-      div{
-        width: 120px;
-        height: 120px;
-        border-radius: 10px;
-        background: #f5f5f5;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
-        img{
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
+    .profile__header__info {
+      display: flex;
+      flex-direction: column;
+      .profile__header__info__name {
+        font-size: 24px;
+        margin: 0;
+      }
+      .profile__header__info__badges {
+        display: flex;
+        .profile__header__info__badges__badge {
+          margin-right: 10px;
+          .profile__header__info__badges__badge__image {
+            width: 50px;
+            height: 50px;
+          }
         }
       }
     }
   }
-
-  .information-utilisateur{
+  .profile__content {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    border-radius: 10px;
-    background: #f5f5f5;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
-    .info{
+    .profile__content__info {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 10px;
-      border-radius: 10px;
-      background: #f5f5f5;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
-      span{
-        margin: 5px;
+      .profile__content__info__item {
+        margin-right: 20px;
+        .profile__content__info__item__title {
+          font-size: 18px;
+          margin: 0;
+        }
+        .profile__content__info__item__value {
+          font-size: 16px;
+          margin: 0;
+        }
       }
     }
   }
 }
 
-
-
+.pokemon-list {
+  display: flex;
+  .pokemon-list__item {
+    margin-right: 20px;
+    .pokemon-list__item__image {
+      width: 150px;
+      height: 150px;
+    }
+    .pokemon-list__item__name {
+      font-size: 24px;
+      margin: 0;
+    }
+  }
+}
 </style>

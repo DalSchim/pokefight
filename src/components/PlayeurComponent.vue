@@ -19,7 +19,6 @@ export default {
           </div>
         </div>
       </div>
-
       <div class="player-pokemon">
         <img src="@/assets/img/Pokeball-PNG-HD-Image.png" alt="pidgeotto">
       </div>
